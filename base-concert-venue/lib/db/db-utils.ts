@@ -33,7 +33,7 @@ const defaultDbPath = getDbPath();
 
 export async function getJSONfromFile<ItemType extends JsonDataType>(
   filename: filenames,
-  dbPath: string = defaultDbPath
+  dbPath: string = defaultDbPath as string
 ): Promise<ItemType[]> {
   const filePath = path.join(dbPath, filename);
   const data = await fs.readFile(filePath);
@@ -55,7 +55,7 @@ export async function getItemById<ItemType extends JsonDataType>(
 export async function writeJSONToFile<T extends JsonDataType>(
   filename: filenames,
   data: Array<T>,
-  dbPath: string = defaultDbPath
+  dbPath: string = defaultDbPath as string
 ): Promise<void> {
   const filePath = path.join(dbPath, filename);
   const jsonData = JSON.stringify(data);

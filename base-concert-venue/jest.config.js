@@ -10,7 +10,7 @@ const createJestConfig = nextJest({
 const customJestConfig = {
   setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
   // to prevent non-test files from being interpreted as test files
-  testRegex: "\\.test\\.[jt]sx?$",
+  testRegex: "/__tests__/.*/.*\\.test\\.[jt]sx?$",
   moduleNameMapper: {
     // Handle module aliases (this will be automatically configured for you soon)
     "^@/(.*)$": "<rootDir>/$1",
